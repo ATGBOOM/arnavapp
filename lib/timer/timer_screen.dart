@@ -12,10 +12,9 @@ class TimerScreen extends StatelessWidget{
        child: Row(
          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
          children: [
-           TimerContainer(),
-           TimerContainer(),
-           TimerContainer(),
-         ],
+           TimerContainer(timerLabel: "Hours", timerValue: "10",),
+           TimerContainer(timerLabel: "Mins", timerValue: "30",),
+           TimerContainer(timerLabel: "Secs", timerValue: "40",),         ],
        )
      ),
    );

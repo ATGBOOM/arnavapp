@@ -1,3 +1,4 @@
+import 'package:arnavapp/playground/playground_screen.dart';
 import 'package:arnavapp/timer/timer_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,13 @@ class HomeScreen extends StatelessWidget{
                   Navigator.push(context, MaterialPageRoute(builder: (context ) => TimerScreen()));
                },
                child: Text("Start Timer")
-           )
+           ),
+           ElevatedButton(
+               onPressed: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context ) => PlaygroundScreen()));
+               },
+               child: Text("smile")
+           ),
          ],
        ),
      ),

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TimerContainer extends StatelessWidget{
+  String timerLabel;
+  String timerValue;
+
+  TimerContainer({required this.timerLabel,required this.timerValue});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +18,7 @@ class TimerContainer extends StatelessWidget{
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "00",
+            timerValue,
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -21,7 +26,7 @@ class TimerContainer extends StatelessWidget{
             ),
           ),
           Text(
-            "Hours",
+            timerLabel,
             style: TextStyle(
                 fontSize: 16,
                 color: Colors.white
