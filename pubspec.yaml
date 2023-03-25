@@ -58,6 +58,9 @@ dependencies:
   #to and from json
   json_serializable: ^6.5.4
 
+  #displaying animation
+  lottie: ^2.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

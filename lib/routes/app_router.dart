@@ -1,3 +1,4 @@
+import 'package:arnavapp/commonui/no_internet_page.dart';
 import 'package:arnavapp/home/home_screen.dart';
 import 'package:arnavapp/splash/splash_screen.dart';
 import 'package:auto_route/annotations.dart';
@@ -7,6 +8,7 @@ import '../home/second/second_page.dart';
 import '../home/third/third_page.dart';
 
 @MaterialAutoRouter(
+  replaceInRouteName: 'Screen, Page, Route',
     routes: [
       AutoRoute(
           path: "/splash",
@@ -42,6 +44,10 @@ import '../home/third/third_page.dart';
             ]
           ),
         ]
+      ),
+      AutoRoute(
+        path: "/noInternet",
+        page: NoInternetPage
       )
     ]
 )
