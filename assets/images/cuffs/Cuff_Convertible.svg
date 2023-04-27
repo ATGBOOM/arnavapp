@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="144px" viewBox="0 0 314 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Cuff-convertible</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cuff-convertible" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="thumbnail---cuff">
+            <path d="M96.5,90.9492188 L96.5,144.716797" id="Path-17" stroke="#A9B4C0" stroke-width="3" opacity="0.4"></path>
+            <path d="M216.5,90.9492188 L216.5,144.716797" id="Path-17-Copy" stroke="#A9B4C0" stroke-width="3" opacity="0.4"></path>
+            <g id="cuff/convertible-sm" transform="translate(157.000000, 70.500000) scale(1, -1) translate(-157.000000, -70.500000) translate(93.000000, 21.000000)">
+                <polygon id="Stroke-1" stroke="#1B304E" stroke-width="2.9" stroke-linejoin="round" points="111.65 93.3075 123.25 93.3075 123.25 2.871 2.9 2.871 2.9 93.3075 75.4 93.3075"></polygon>
+                <path d="M77.3333333,48.807 L100.533333,48.807" id="Path-2" stroke="#1B304E" stroke-width="4.35" stroke-linecap="round"></path>
+                <path d="M27.0666667,48.807 L50.2666667,48.807" id="Path-2-Copy" stroke="#1B304E" stroke-width="4.35" stroke-linecap="round"></path>
+                <g id="button/for-preview" transform="translate(23.200000, 34.452000)" fill="#1B304E" fill-rule="evenodd">
+                    <path d="M21.913125,15.170625 C21.913125,18.892485 18.8958562,21.913125 15.170625,21.913125 C11.448765,21.913125 8.428125,18.892485 8.428125,15.170625 C8.428125,11.448765 11.448765,8.428125 15.170625,8.428125 C18.8958562,8.428125 21.913125,11.448765 21.913125,15.170625" id="BG"></path>
+                </g>
+                <path d="M63.8,93.3075 L63.8,2.871" id="Stroke-3" stroke="#1B304E" stroke-width="2.9" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

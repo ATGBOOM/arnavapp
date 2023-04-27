@@ -1,4 +1,5 @@
 import 'package:arnavapp/routes/app_router.gr.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -16,6 +17,7 @@ void main() async{
 
 Future<void> _init() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   configureDependencies();
 }
 

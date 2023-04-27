@@ -61,6 +61,24 @@ dependencies:
   #displaying animation
   lottie: ^2.3.0
 
+  #firebase remote config
+  firebase_core: ^2.8.0
+  firebase_remote_config: ^3.0.15
+
+  #enabling google sign in
+  firebase_auth: ^4.4.0
+  google_sign_in: ^6.0.2
+
+  #read images from firebase storage
+  firebase_storage: ^11.1.0
+
+  #database
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+
+  #create local storage path
+  path_provider: ^2.0.14
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,6 +99,9 @@ dev_dependencies:
 
   #For firing build runner command
   build_runner: ^2.3.3
+
+  #code generation for isar
+  isar_generator: ^3.1.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

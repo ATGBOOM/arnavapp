@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "505726267476",
+    "project_id": "bespoke-a15fa",
+    "storage_bucket": "bespoke-a15fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505726267476:android:52a31b3b2b901564bbfdc1",
+        "android_client_info": {
+          "package_name": "com.arnav.umang.v.arnavapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505726267476-d2b7rrd4aum7otvdl4jkf546obujjbd3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arnav.umang.v.arnavapp",
+            "certificate_hash": "5fa9bfbd592894619ea04928bcd45f933fbeaf89"
+          }
+        },
+        {
+          "client_id": "505726267476-85uvhmqkoml2jjimptcmmo42440a1im3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI2Wd1qoXRpaODhMfHAkMmqoxlkjeQRQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505726267476-85uvhmqkoml2jjimptcmmo42440a1im3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

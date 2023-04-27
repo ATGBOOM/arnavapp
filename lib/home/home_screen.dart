@@ -34,7 +34,10 @@ class HomeScreen extends StatelessWidget{
                title: Text("Third Page")
            ),
          ],
-
+         currentIndex: tabsrouter.activeIndex,
+         onTap: (int index){
+           return tabsrouter.setActiveIndex(index);
+         },
        );
      },
    );
