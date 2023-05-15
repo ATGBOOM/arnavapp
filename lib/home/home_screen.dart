@@ -1,6 +1,6 @@
 import 'package:arnavapp/base/logger_utils.dart';
 import 'package:arnavapp/playground/playground_screen.dart';
-import 'package:arnavapp/splash/splash_screen.dart';
+import 'package:arnavapp/splash/splash_screen_page.dart';
 import 'package:arnavapp/timer/timer_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';

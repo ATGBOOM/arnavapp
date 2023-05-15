@@ -2,7 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class NoInternetPage extends StatelessWidget{
+class BespokeErrorWidget extends StatelessWidget{
+  String? errorMessage;
+
+  BespokeErrorWidget(this.errorMessage);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +17,7 @@ class NoInternetPage extends StatelessWidget{
             Lottie.asset(
                 "assets/images/no_internet.json"
             ),
-            Text("No Internet, Please connect to internet for shopping",
+            Text(errorMessage??"No Internet, Please connect to internet for shopping",
             textAlign: TextAlign.center,
             ),
           ],

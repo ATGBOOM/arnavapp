@@ -1,5 +1,5 @@
 
-import 'package:arnavapp/commonui/no_internet_page.dart';
+import 'package:arnavapp/commonui/bespoke_error_widget.dart';
 import 'package:arnavapp/routes/app_router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +16,6 @@ class FirstPage extends StatelessWidget{
                 Text("hello first page")
               ],
           ),
-          ElevatedButton(
-              onPressed: (){
-                context.router.navigate(const NoInternetPageRoute());
-              },
-              child: Text("Start no internet page")
-          )
         ],
       ),
     );

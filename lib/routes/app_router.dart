@@ -1,6 +1,7 @@
-import 'package:arnavapp/commonui/no_internet_page.dart';
+import 'package:arnavapp/commonui/bespoke_error_widget.dart';
 import 'package:arnavapp/home/home_screen.dart';
-import 'package:arnavapp/splash/splash_screen.dart';
+import 'package:arnavapp/onboarding/on_boarding_page.dart';
+import 'package:arnavapp/splash/splash_screen_page.dart';
 import 'package:auto_route/annotations.dart';
 
 import '../home/first/first_page.dart';
@@ -13,7 +14,11 @@ import '../home/third/third_page.dart';
       AutoRoute(
           path: "/splash",
           initial: true,
-          page: SplashScreen
+          page: SplashScreenPage
+      ),
+      AutoRoute(
+          path: "/onboarding",
+          page: OnBoardingPage
       ),
       AutoRoute(
         path: "/home",
@@ -46,8 +51,8 @@ import '../home/third/third_page.dart';
         ]
       ),
       AutoRoute(
-        path: "/noInternet",
-        page: NoInternetPage
+        path: "/bespokeErrorWidget",
+        page: BespokeErrorWidget
       )
     ]
 )
