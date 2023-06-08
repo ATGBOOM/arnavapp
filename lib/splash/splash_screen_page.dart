@@ -25,9 +25,9 @@ class SplashScreenPage extends HookConsumerWidget {
 
     void startNextScreen(bool isLogin){
       if (isLogin){
-        context.router.replace(const HomeScreenRoute());
+        context.router.replace(const OnBoardingPageRoute());
       }else{
-       context.router.replace(const OnBoardingPageRoute());
+        context.router.replace(const HomeScreenRoute());
        //context.router.replace(const HomeScreenRoute());
       }
     }
@@ -70,11 +70,11 @@ class SplashScreenPage extends HookConsumerWidget {
           );
         },
         startHomeScreen: (){
-
+          startNextScreen(false);
           return Text("start home screen state");
         } ,
         startLoginScreen: (){
-          startNextScreen(false);
+          startNextScreen(true);
           return CustomLoader();
         }
     );

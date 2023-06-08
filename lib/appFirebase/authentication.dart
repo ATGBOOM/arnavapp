@@ -8,7 +8,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 class Authentication {
   final _logger = locator<LoggerUtils>();
   final _TAG = "Authentication";
-  Future<void> initialiseFirebase() async{
+  // step 1
+  Future<User?> initialiseFirebase() async{
     await Firebase.initializeApp();
     User? currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null){
@@ -17,9 +18,11 @@ class Authentication {
     else{
       _logger.log(_TAG, "user sign in failed");
     }
+    return Future.value(currentUser);
   }
 
-  Future<void> startGoogleSignIn() async{
+  //step 2
+  Future<User?> startGoogleSignIn() async{
     FirebaseAuth currentAuth = FirebaseAuth.instance;
     User? currentUser;
     GoogleSignIn googleSignIn = GoogleSignIn();
@@ -34,19 +37,16 @@ class Authentication {
       try{
         final UserCredential userCredential = await currentAuth.signInWithCredential(authCredential);
         currentUser = userCredential.user;
-        final firebaseFolderRef = FirebaseStorage.instance.ref().child("collars");
-        final collarImageList = await firebaseFolderRef.listAll();
-        for(var currentImageItem in collarImageList.items){
-          String imageURL = await currentImageItem.getDownloadURL();
-          _logger.log(_TAG, "current image item${imageURL}");
 
-        }
+        return Future.value(currentUser);
       }
       on FirebaseAuthException catch (e){
         _logger.log(_TAG, "firebase authentication failed$e");
+        return Future.error("authentication failed");
       }
       catch(e){
         _logger.log(_TAG, "error occured$e");
+        return Future.error("something went wrong");
       }
     }
 

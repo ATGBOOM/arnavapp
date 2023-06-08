@@ -1,4 +1,5 @@
 
+import 'package:arnavapp/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,7 +14,7 @@ class GoogleSignInButton extends HookConsumerWidget{
   final _TAG = "GoogleSignInButton";
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
+    final authenticationNotifier = ref.watch(onboardingProvider.notifier);
     return Padding(
         padding: const EdgeInsets.only(bottom: 16.0),
         child: OutlinedButton(
@@ -26,7 +27,7 @@ class GoogleSignInButton extends HookConsumerWidget{
             ),
           ),
           onPressed: () async {
-
+              authenticationNotifier.fetchUserDetails();
           },
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),

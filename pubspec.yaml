@@ -79,6 +79,9 @@ dependencies:
   #create local storage path
   path_provider: ^2.0.14
 
+  #error handling dartz
+  dartz: ^0.10.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

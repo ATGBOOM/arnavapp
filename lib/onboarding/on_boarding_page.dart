@@ -3,6 +3,8 @@ import 'package:arnavapp/commonui/custom_loader.dart';
 import 'package:arnavapp/commonui/empty_widget.dart';
 import 'package:arnavapp/onboarding/google_sign_in_button.dart';
 import 'package:arnavapp/providers/providers.dart';
+import 'package:arnavapp/routes/app_router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -12,6 +14,11 @@ class OnBoardingPage extends HookConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final onboardingStateProvider = ref.watch(onboardingProvider);
+    onboardingStateProvider.whenOrNull(
+      startNextScreen: (){
+        context.router.replace(const HomeScreenRoute());
+      }
+    );
     return onboardingStateProvider.when(
         loading: (){
           return CustomLoader();
