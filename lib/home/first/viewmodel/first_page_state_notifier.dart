@@ -9,10 +9,13 @@ import '../../../injector/injection.dart';
 class FirstPageStateNotifier extends StateNotifier<FirstPageViewState> {
   final _logger = locator<LoggerUtils>();
   final _TAG = "FirstPageStateNotifier";
-  FirstPageStateNotifier(): super(const FirstPageViewState.loading());
+  FirstPageStateNotifier(): super(const FirstPageViewState.loading()){
+   loadImages();
+  }
 
   Future<void> loadImages() async{
     try{
+      state = const FirstPageViewState.loading();
       List<String> carouselImagesList = [];
       List<String> fabricImagesList = [];
       FirebaseFileUtils fileUtils = FirebaseFileUtils();
@@ -20,7 +23,26 @@ class FirstPageStateNotifier extends StateNotifier<FirstPageViewState> {
         fileUtils.fetchImages(ApplicationConstants.KcarouselImagesPath),
         fileUtils.fetchImages(ApplicationConstants.KfabricImagesPath),
       ]);
+      var carouselImageResponse = response[0];
+      var fabricImageResponse = response[1];
 
+      carouselImageResponse.fold(
+              (String errorMessage){
+                state = FirstPageViewState.error(errorMessage);
+              },
+              (List<String> imageURLs) {
+                carouselImagesList.addAll(imageURLs);
+              }
+      );
+      fabricImageResponse.fold(
+              (String errorMessage){
+            state = FirstPageViewState.error(errorMessage);
+          },
+              (List<String> imageURLs) {
+            fabricImagesList.addAll(imageURLs);
+          }
+      );
+      state = FirstPageViewState.displayProducts(fabricImagesList, carouselImagesList);
     }
     catch(error, stackTrace){
       _logger.log(_TAG, "error occured $error and stack trace $stackTrace");

@@ -3,9 +3,11 @@ import 'package:arnavapp/base/application_constants.dart';
 import 'package:arnavapp/base/firebase_file_utils.dart';
 import 'package:arnavapp/base/logger_utils.dart';
 import 'package:arnavapp/commonui/bespoke_error_widget.dart';
+import 'package:arnavapp/home/first/cloth_item_view.dart';
 import 'package:arnavapp/providers/providers.dart';
 import 'package:arnavapp/routes/app_router.gr.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
@@ -25,25 +27,46 @@ class FirstPage extends HookConsumerWidget{
           return Scaffold(
             body: Column(
               children: [
-                Row(
-                  children: [
-                    Text("hello first page")
-                  ],
-                ),
-                ElevatedButton(
-                    onPressed: () async{
-                      FirebaseFileUtils fileUtils = FirebaseFileUtils();
-                      var response = await fileUtils.fetchImages(ApplicationConstants.KcarouselImagesPath);
-                      response.fold(
-                              (String errorMessage) {
-                            _logger.log(_TAG, "error occurred $errorMessage");
-                          },
-                              (List<String> imageUrls) {
-                            _logger.log(_TAG, "response received $imageUrls");
-                          }
+
+                CarouselSlider.builder(
+                    itemCount: carouselImages.length,
+                    itemBuilder: (BuildContext context, int itemIndex, int pageIndex){
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                            image: NetworkImage(carouselImages[itemIndex])
+                          )
+                        ),
                       );
                     },
-                    child: Text("TEST")
+                    options: CarouselOptions(
+                      aspectRatio: 16/9,
+                      viewportFraction: 0.8,
+                      initialPage: 0,
+                      enableInfiniteScroll: true,
+                      reverse: false,
+                      autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 2),
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enlargeCenterPage: true,
+                      enlargeFactor: 0.3,
+                      scrollDirection: Axis.horizontal,
+                    )
+                ),
+                Expanded(
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (BuildContext context, int index){
+                      String imageURL = fabricImages[index];
+                      return ClothItemView(
+                          clothImageURL: imageURL
+                      );
+                    }
+                ),
                 )
               ],
             ),
