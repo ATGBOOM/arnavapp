@@ -6,5 +6,10 @@ class ApplicationConstants {
   static const String KcarouselImagesPath= "carousels";
   static const String KfabricImagesPath= "fabrics";
   static const String KsomethingWentWrong= "try again after some time";
+  static const String KFittingsImagesPath = "fittings";
+  static const String KPlacketsImagesPath = "plackets";
+  static const String KSleevesImagesPath = "sleeves";
+  static const String KCollarsImagesPath = "collars";
+  static const String KCuffsImagesPath = "cuffs";
 
 }

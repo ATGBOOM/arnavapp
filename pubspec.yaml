@@ -85,6 +85,9 @@ dependencies:
   #carousel slider in home screen
   carousel_slider: ^4.2.1
 
+  #loading svg images
+  flutter_svg: ^2.0.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

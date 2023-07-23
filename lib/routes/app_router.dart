@@ -1,3 +1,4 @@
+import 'package:arnavapp/clothcustomization/cloth_customization_view.dart';
 import 'package:arnavapp/commonui/bespoke_error_widget.dart';
 import 'package:arnavapp/home/home_screen.dart';
 import 'package:arnavapp/onboarding/on_boarding_page.dart';
@@ -53,7 +54,11 @@ import '../home/third/third_page.dart';
       AutoRoute(
         path: "/bespokeErrorWidget",
         page: BespokeErrorWidget
-      )
+      ),
+      AutoRoute(
+          path: "/clothCustomizationView",
+          page: ClothCustomizationView
+      ),
     ]
 )
 class $AppRouter{

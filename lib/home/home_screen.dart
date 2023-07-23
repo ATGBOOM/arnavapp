@@ -1,4 +1,5 @@
 import 'package:arnavapp/base/logger_utils.dart';
+import 'package:arnavapp/commonui/nav_bar.dart';
 import 'package:arnavapp/playground/playground_screen.dart';
 import 'package:arnavapp/splash/splash_screen_page.dart';
 import 'package:arnavapp/timer/timer_screen.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return AutoTabsScaffold(
+     appBarBuilder: (_, tabsRouter) => NavBar(),
      routes: [
        FirstPageRouter(),
        SecondPageRouter(),

@@ -1,3 +1,5 @@
+import 'package:arnavapp/clothcustomization/state/cloth_customization_view_state.dart';
+import 'package:arnavapp/clothcustomization/viewmodel/cloth_customization_state_notifier.dart';
 import 'package:arnavapp/home/first/first_page.dart';
 import 'package:arnavapp/onboarding/state/authentication_screen_state.dart';
 import 'package:arnavapp/onboarding/viewmodel/onboarding_state_notifier.dart';
@@ -23,5 +25,11 @@ final onboardingProvider = StateNotifierProvider<OnboardingStateNotifier, Authen
 final firstPageProvider = StateNotifierProvider<FirstPageStateNotifier, FirstPageViewState>(
       (ref) {
     return FirstPageStateNotifier();
+  },
+);
+
+final clothCustomizationProvider = StateNotifierProvider<ClothCustomizationStateNotifier, ClothCustomizationViewState>(
+      (ref) {
+    return ClothCustomizationStateNotifier();
   },
 );
