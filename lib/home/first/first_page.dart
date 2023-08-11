@@ -3,6 +3,7 @@ import 'package:arnavapp/base/application_constants.dart';
 import 'package:arnavapp/base/color_constants.dart';
 import 'package:arnavapp/base/firebase_file_utils.dart';
 import 'package:arnavapp/base/logger_utils.dart';
+import 'package:arnavapp/base/save_selection_details.dart';
 import 'package:arnavapp/commonui/bespoke_error_widget.dart';
 import 'package:arnavapp/home/first/cloth_item_view.dart';
 import 'package:arnavapp/providers/providers.dart';
@@ -22,7 +23,7 @@ class FirstPage extends HookConsumerWidget{
   final _TAG = "FirstPage";
   late PageController _pageController;
   CarouselController buttonCarouselController = CarouselController();
-
+  final _saveSelectionDetails = locator<SaveSelectionDetails>();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -119,6 +120,7 @@ class FirstPage extends HookConsumerWidget{
 
                         return ClothItemView(
                             onProductClicked: (String url){
+                              _saveSelectionDetails.saveDetails("selectedfabric", url);
                               context.router.navigate(const ClothCustomizationViewRoute());
                             },
                             clothImageURL: imageURL

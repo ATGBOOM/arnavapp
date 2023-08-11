@@ -1,10 +1,13 @@
 import 'package:arnavapp/base/color_constants.dart';
 import 'package:arnavapp/base/logger_utils.dart';
+import 'package:arnavapp/base/save_selection_details.dart';
 import 'package:arnavapp/clothcustomization/single_item_view.dart';
 import 'package:arnavapp/commonui/bespoke_error_widget.dart';
 import 'package:arnavapp/commonui/custom_loader.dart';
 import 'package:arnavapp/commonui/nav_bar.dart';
 import 'package:arnavapp/providers/providers.dart';
+import 'package:arnavapp/routes/app_router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -16,6 +19,7 @@ import '../injector/injection.dart';
 class ClothCustomizationView extends HookConsumerWidget{
   final _logger = locator<LoggerUtils>();
   final _TAG = "cloth customization view";
+  final _saveSelectionDetails = locator<SaveSelectionDetails>();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
@@ -95,6 +99,7 @@ class ClothCustomizationView extends HookConsumerWidget{
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
                 else {
+                  _saveSelectionDetails.saveDetails("$customizationEnum", clothStylesList[selectedItemIndex.value]);
                   selectedItemIndex.value = -1;
                   if (customizationEnum ==
                       CustomizationEnum.CUFF_CUSTOMIZATION) {
@@ -119,8 +124,9 @@ class ClothCustomizationView extends HookConsumerWidget{
                 }
               },
               onStepCancel: (){
-                
+                _saveSelectionDetails.getDetails();
                 _logger.log(_TAG, "cancel button pressed");
+                context.router.navigate(const OrdersPageRoute());
               },
             ),
           );
