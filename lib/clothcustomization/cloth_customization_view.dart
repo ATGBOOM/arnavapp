@@ -47,7 +47,7 @@ class ClothCustomizationView extends HookConsumerWidget{
                           color: Colors.white,
                         ),
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: ColorConstants.kRedColor,
                           borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(26),

@@ -27,7 +27,7 @@ class SplashScreenPage extends HookConsumerWidget {
       if (isLogin){
         context.router.replace(const OnBoardingPageRoute());
       }else{
-        context.router.replace(const HomeScreenRoute());
+        context.router.replace(const OrdersPageRoute());
        //context.router.replace(const HomeScreenRoute());
       }
     }

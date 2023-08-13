@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget{
   String hintText;
-  String prefillText;
   TextInputType inputType;
-  int maxLength = 50;
+  int maxLength = 0;
   TextEditingController controller;
 
-  InputField({required this.hintText, required this.prefillText, required this.inputType, required this.controller});
+  InputField({required this.hintText,  required this.inputType, required this.controller, this.maxLength = 50});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +37,7 @@ class InputField extends StatelessWidget{
             hintText: hintText,
             hintStyle: TextStyle(
               color: ColorConstants.kGrayColor,
+                fontSize: 14,
             )
         ),
         validator: (String? input) {
@@ -45,7 +45,7 @@ class InputField extends StatelessWidget{
             return null;
           }
           else {
-            return "enter valid input";
+            return "Enter valid input";
           }
         }
     );

@@ -18,7 +18,11 @@ class FilledButtonWidget extends StatelessWidget{
             backgroundColor: MaterialStateProperty.all<Color>(ColorConstants.kRedColor),
       ),
 
-        onPressed: (){},
+        onPressed: (){
+           if(onButtonPress!=null){
+             onButtonPress!();
+           }
+        },
         child: Text(buttonText)
     );
   }
