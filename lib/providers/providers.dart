@@ -3,6 +3,8 @@ import 'package:arnavapp/clothcustomization/viewmodel/cloth_customization_state_
 import 'package:arnavapp/home/first/first_page.dart';
 import 'package:arnavapp/onboarding/state/authentication_screen_state.dart';
 import 'package:arnavapp/onboarding/viewmodel/onboarding_state_notifier.dart';
+import 'package:arnavapp/orders/state/orders_view_state.dart';
+import 'package:arnavapp/orders/viewmodel/order_state_notifier.dart';
 import 'package:arnavapp/splash/state/splash_screen_state.dart';
 import 'package:arnavapp/splash/viewmodel/splash_state_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -31,5 +33,11 @@ final firstPageProvider = StateNotifierProvider<FirstPageStateNotifier, FirstPag
 final clothCustomizationProvider = StateNotifierProvider<ClothCustomizationStateNotifier, ClothCustomizationViewState>(
       (ref) {
     return ClothCustomizationStateNotifier();
+  },
+);
+
+final ordersProvider = StateNotifierProvider<OrderStateNotifier, OrdersViewState>(
+      (ref) {
+    return OrderStateNotifier();
   },
 );
